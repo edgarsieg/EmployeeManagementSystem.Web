@@ -1,0 +1,73 @@
+﻿@model EmployeeManagementSystem.Web.Models.InviteViewModel
+
+@{
+    ViewData["Title"] = "Pakviesti darbuotoją";
+}
+
+<h2>Pakviesti darbuotoją</h2>
+
+@if (Model.InviteSuccessful)
+{
+    <div class="alert alert-success">
+        Darbuotojas sėkmingai pakviestas!<br />
+        Laikinas slaptažodis: <strong>@Model.GeneratedPassword</strong>
+    </div>
+}
+
+<form asp-action="Invite" method="post">
+    <div class="form-group mb-3">
+        <label asp-for="FullName" class="form-label"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Pakviesti</button>
+</form>
+
+<hr />
+
+@if (Model.InvitedEmployees.Any())
+{
+    <h4 class="mt-4">Pakviesti darbuotojai:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Vardas, pavardė</th>
+                <th>El. paštas</th>
+                <th>Rolė</th>
+                <th>Veiksmai</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.InvitedEmployees)
+            {
+                <tr>
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>
+                        <form asp-action="DeleteInvite" asp-route-id="@user.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger">Pašalinti</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="mt-4">Kol kas nėra pakviestų darbuotojų.</p>
+}
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

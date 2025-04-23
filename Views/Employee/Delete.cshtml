@@ -1,0 +1,26 @@
+@model EmployeeManagementSystem.Web.Models.Employee
+
+@{
+    ViewData["Title"] = "Ištrinti darbuotoją";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h5>Ar tikrai norite ištrinti darbuotoją:</h5>
+
+<dl class="row">
+    <dt class="col-sm-3">Vardas:</dt>
+    <dd class="col-sm-9">@Model.FirstName</dd>
+
+    <dt class="col-sm-3">Pavardė:</dt>
+    <dd class="col-sm-9">@Model.LastName</dd>
+
+    <dt class="col-sm-3">Pareigos:</dt>
+    <dd class="col-sm-9">@Model.Position</dd>
+</dl>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Taip, ištrinti</button>
+    <a asp-action="Index" class="btn btn-secondary">Ne, grįžti</a>
+</form>

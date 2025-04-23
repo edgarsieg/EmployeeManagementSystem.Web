@@ -1,0 +1,127 @@
+﻿@model EmployeeManagementSystem.Web.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Pradžia";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Sveiki atvykę į Darbuotojų Valdymo Sistemą</h1>
+        <p class="lead text-muted">Ši sistema leidžia įmonei lengvai valdyti savo darbuotojų informaciją, naudotojus, ir kt.</p>
+        <div class="mt-4">
+            <a class="btn btn-primary btn-lg me-2" asp-controller="Account" asp-action="Login">Prisijungti</a>
+            <a class="btn btn-outline-primary btn-lg" asp-controller="Account" asp-action="Register">Registruotis</a>
+        </div>
+    </div>
+
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/employee-1.png" class="card-img-top" alt="Darbuotojas 1">
+                <div class="card-body">
+                    <h5 class="card-title">Tvarkykite darbuotojų įrašus</h5>
+                    <p class="card-text text-muted">
+                        Centralizuokite visą darbuotojų informaciją, įskaitant kontaktus, vaidmenis ir užimtumo statusą.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/employee-2.png" class="card-img-top" alt="Darbuotojas 2">
+                <div class="card-body">
+                    <h5 class="card-title">Valdykite ir kontroliuokite teises</h5>
+                    <p class="card-text text-muted">
+                        Priskirkite naudotojų vaidmenis ir suteikite prieigą prie skirtingų sistemos dalių.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/employee-3.png" class="card-img-top" alt="Darbuotojas 3">
+                <div class="card-body">
+                    <h5 class="card-title">Gerinkite efektyvumą</h5>
+                    <p class="card-text text-muted">
+                        Supaprastinkite komandos valdymo procesus – darbuotojų duomenys visada po ranka.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Apie sistemą / Kodėl verta -->
+<div class="container my-5">
+    <h2 class="text-center mb-4 fw-bold">Kodėl verta naudoti šią sistemą?</h2>
+    <div class="row text-center">
+        <div class="col-md-3 mb-4">
+            <i class="bi bi-puzzle-fill display-4 text-primary mb-2"></i>
+            <h5>Integruota su kitomis sistemomis</h5>
+            <p class="text-muted">Lengva integruoti su kitomis jūsų naudojamomis verslo sistemomis.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <i class="bi bi-shield-lock-fill display-4 text-primary mb-2"></i>
+            <h5>Saugus prisijungimas</h5>
+            <p class="text-muted">Naudojami saugūs slaptažodžiai, autentifikacija ir vartotojų teisės.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <i class="bi bi-bar-chart-fill display-4 text-primary mb-2"></i>
+            <h5>Ataskaitos vienu paspaudimu</h5>
+            <p class="text-muted">Generuokite personalo ataskaitas, analizę ir eksportus lengvai.</p>
+        </div>
+        <div class="col-md-3 mb-4">
+            <i class="bi bi-people-fill display-4 text-primary mb-2"></i>
+            <h5>Teisių valdymas</h5>
+            <p class="text-muted">Lengvai paskirstykite prieigas tarp direktorių ir darbuotojų.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Kaip tai veikia -->
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-4">Kaip tai veikia?</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4">
+                        <div class="border rounded p-3 h-100 shadow-sm">
+                            <div class="display-4">1️⃣</div>
+                            <h6 class="mt-3 fw-bold">Registruokitės</h6>
+                            <p class="text-muted">Sukurkite paskyrą ir įmonę.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="border rounded p-3 h-100 shadow-sm">
+                            <div class="display-4">2️⃣</div>
+                            <h6 class="mt-3 fw-bold">Pridėkite įmonę</h6>
+                            <p class="text-muted">Įveskite įmonės pavadinimą ir pradėkite naudotis.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="border rounded p-3 h-100 shadow-sm">
+                            <div class="display-4">3️⃣</div>
+                            <h6 class="mt-3 fw-bold">Pakvieskite darbuotojus</h6>
+                            <p class="text-muted">Siųskite kvietimus el. paštu ir suteikite prieigą.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="border rounded p-3 h-100 shadow-sm">
+                            <div class="display-4">4️⃣</div>
+                            <h6 class="mt-3 fw-bold">Dirbkite efektyviai</h6>
+                            <p class="text-muted">Tvarkykite personalą, stebėkite duomenis ir taupykite laiką.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
